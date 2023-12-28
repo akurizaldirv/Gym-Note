@@ -1,13 +1,372 @@
 body {
   margin: 0;
+  padding: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-image: url('assets/bg_work.jpg');
+  background-position: 60% 30%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.navbar {
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.pages {
+  margin-top: 30px;
+  padding-bottom: 5vh;
+}
+
+.bg-trans {
+  background-color: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(3px);
+}
+
+.workoutCard {
+  max-width: 100%;
+  transition: 0.4s;
+  border-radius: 15px;
+  padding: 0 5px;
+}
+
+.workoutCard:hover{
+  background-color: rgba(0, 0, 0, 0.8);
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
+  
+}
+
+.add-work-area {
+  position: sticky;
+  top: 5px;
+}
+
+.add-title-form, .add-reps-form, .add-load-form, .login-form, .signup-form {
+  background-color: rgba(0, 0, 0, 0.3);
+  border-color:  #04aa3b;
+}
+
+.add-title-form::placeholder, .add-reps-form::placeholder, .add-load-form::placeholder, .signup-form::placeholder, .login-form::placeholder {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.add-title-form:focus, .add-reps-form:focus, .add-load-form:focus, .signup-form:focus, .login-form:focus {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.add-form-group {
+  background-color: #04aa3b;
+  border-color:  #04aa3b;
+  color: white;
+}
+
+.add-title {
+  width: 100%;
+  text-shadow:
+    3px 3px 0 #000,
+  -1px -1px 0 #000,  
+   1px -1px 0 #000,
+   -1px 1px 0 #000,
+    1px 1px 0 #000;
+}
+
+.add-submit {
+  width: 100%;
+}
+
+.add-submit-btn {
+  background-color: #04aa3b;
+  border: #04aa3b;
+}
+
+.add-submit-btn:hover, .add-submit-btn:focus, .add-submit-btn:visited {
+  background-color: #03c945;
+  border: #03c945;
+}
+
+.load-space {
+  height: 100%;
+}
+
+.spinner {
+  /* margin-top: 35vh; */
+  position: absolute;
+  transform: translate(-50%, -50%);
+  left: 50%;
+  top: 50%;
+}
+
+.black {
+  color: black;
+}
+
+.white {
+  color: white;
+}
+
+.yellow {
+  color: yellow;
+}
+
+.red {
+  color: red;
+}
+
+.green {
+  color: #03c945;
+}
+
+.t-bold {
+  font-weight: 600;
+}
+
+.t-light {
+  font-weight: 200;
+}
+
+.no-bg {
+  background: none;
+  border: none;
+}
+
+.cur-pointer {
+  cursor: pointer;
+}
+
+.error {
+  border-color: red;
+}
+
+.add-error-group {
+  background-color: red;
+  color: white;
+}
+
+.mini-navbar {
+  width: 100%;
+  max-width: 300px;
+  background-color: #04aa3b;
+  margin: auto;
+  height: 30px;
+  border-radius: 10px;
+}
+
+.mini-nav-p {
+  padding-top: 2px;
+  font-size: 14px;
+  margin: auto;
+  background: #04aa3b;
+  font-weight: 200;
+}
+
+.mini-nav-p > a {
+  text-decoration: none;
+  margin: 0 5px;
+  display: inline-block;
+  position: relative;
+
+}
+
+.mini-nav-p > a:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+.mini-nav-p > a::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: .75px;
+  bottom: 0;
+  left: 0;
+  background-color: #ffffff;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+.login-area {
+  margin: auto;
+  width: 95%;
+  max-width: 480px;
+  position: absolute;
+  border-radius: 20px;
+  padding: 25px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -38%);
+  box-shadow: 0px 5px rgb(4, 170, 59);
+}
+
+.login-area > p {
+  text-align: center;
+  font-weight: 200;
+}
+
+
+.login-area > p > a{
+  text-decoration: none;
+  margin: 0 5px;
+  display: inline-block;
+  position: relative;
+  color: white;
+}
+
+.login-area > p > a:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+.login-area > p > a::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: .75px;
+  bottom: 0;
+  left: 0;
+  background-color: #ffffff;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+.signup-area {
+  margin: auto;
+  width: 95%;
+  max-width: 480px;
+  position: absolute;
+  border-radius: 20px;
+  padding: 25px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -38%);
+  box-shadow: 0px 5px rgb(4, 170, 59);
+}
+
+.signup-area > p {
+  text-align: center;
+  font-weight: 200;
+}
+
+
+.signup-area > p > a{
+  text-decoration: none;
+  margin: 0 5px;
+  display: inline-block;
+  position: relative;
+  color: white;
+}
+
+.signup-area > p > a:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+.signup-area > p > a::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: .75px;
+  bottom: 0;
+  left: 0;
+  background-color: #ffffff;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+.error {
+  border-radius: 5px;
+  border: 1px solid red;
+  margin: 10px 0;
+  padding: 5px 15px;
+  color: white;
+  background-color: rgba(255, 20, 20, 0.4);
+
+}
+
+.btn-logout{
+  text-decoration: none;
+  color: white;
+  font-weight: 600;
+  margin-left: 10px;
+  display: inline-block;
+  position: relative;
+  color: white;
+}
+
+.btn-logout:hover{
+  cursor: pointer;
+}
+
+.btn-logout:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+.btn-logout::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: .75px;
+  bottom: 0;
+  left: 0;
+  background-color: #ffffff;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+.not-found {
+  width: 95%;
+  max-width: 640px;
+  /* background-color: #03c945; */
+  /* background-color: #04aa3b; */
+  background-image: linear-gradient(to bottom right, #03c945, #04aa3b);
+  padding: 50px;
+  position: absolute;
+  left: 50%;
+  top: 55%;
+  transform: translate(-50%, -50%);
+  color: white;
+  text-align: center;
+}
+
+.not-found > h1 {
+  font-size: 100px;
+  margin: 50px 0;
+  line-height: 70px;
+  font-weight: 600;
+}
+
+.not-found-mark {
+  color: rgb(233, 59, 59);
+  background-color: white;
+  padding-left: 20px;
+}
+
+@media only screen and (max-width: 440px) {
+  .not-found span {
+    font-size: 60px;
+  }
+}
+
+
+.not-found > p {
+  font-size: 20px;
+}
+
+.not-found a {
+  text-decoration: none;
+  color: white;
+  font-weight: 600;
 }
