@@ -47,6 +47,24 @@ const AddWork = ({ update }) => {
             return;
         }
 
+        let tempEmptyField = []
+
+        if(!title){
+            tempEmptyField.push("title")
+        }
+        if(!reps){
+            tempEmptyField.push("reps")
+        }
+        if(!load){
+            tempEmptyField.push("load")
+        }
+
+        if(tempEmptyField){
+            alert("Please fill all the empty field");
+            setEmptyField(tempEmptyField)
+            return
+        }
+
         const workout = { title, load, reps };
 
         const postWorkout = async () => {
@@ -67,6 +85,11 @@ const AddWork = ({ update }) => {
                 dispatch({ type: "ADD_WORKOUT", payload: response.data });
 
                 alert("Data Added Successfully!");
+
+                setTitle("")
+                setReps("")
+                setLoad("")
+                setEmptyField([])
             } catch (error) {
                 alert(error.response.data["error"]);
                 setEmptyField(error.response.data["emptyField"]);
@@ -81,6 +104,24 @@ const AddWork = ({ update }) => {
         if (!user) {
             setError("You must logged in");
             return;
+        }
+        
+        let tempEmptyField = []
+
+        if(!title){
+            tempEmptyField.push("title")
+        }
+        if(!reps){
+            tempEmptyField.push("reps")
+        }
+        if(!load){
+            tempEmptyField.push("load")
+        }
+
+        if(tempEmptyField.length !== 0){
+            alert("Please fill all the empty field");
+            setEmptyField(tempEmptyField)
+            return
         }
 
         const workout = { title, load, reps };
@@ -110,6 +151,7 @@ const AddWork = ({ update }) => {
                 setTitle("")
                 setReps("")
                 setLoad("")
+                setEmptyField([])
                 navigate("/")
                 
 
